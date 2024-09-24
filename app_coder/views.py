@@ -12,3 +12,4 @@ def crea_producto(req, nombre, ingredientes, precio):
 def lista_productos(req):
     lista =Empanada.objects.all()
     return render(req, 'lista_empanadas.html', {'empanadas': lista})
+
