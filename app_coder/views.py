@@ -14,10 +14,10 @@ def lista_productos(req):
 
     return render(req, 'lista_empanadas.html', {'empanadas': lista})
 def inicio(req):
-    return HttpResponse("Vista de Inicio")
+    return render(req, 'inicio.html', {})
 def empanada(req):
-    return HttpResponse("Vista de Empanadas")
+    return render(req, 'empanada.html', {})
 def hamburguesa(req):
-    return HttpResponse("Vista de Hamburguesa")
+    return render(req, 'hamburguesa.html', {})
 def pizza(req):
-    return HttpResponse("Vista de Pizza")
+    return render(req, 'pizza.html', {})
