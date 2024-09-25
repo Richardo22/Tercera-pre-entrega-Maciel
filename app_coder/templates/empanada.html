@@ -1,11 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Empanadas</title>
-</head>
-<body>    
-    <h1>Vista empanadas</h1>
-</body>
-</html>
+{% extends 'padre.html' %}
+{% block contenidoQueCambia %}
+    <h1> El listado de empanadas disponibles son:</h1>
+    <ul>
+        <li>Jamon y Queso</li>
+        <li>Humita </li>
+        <li>Cuatro Quesos</li>
+        
+    </ul>
+
+{% endblock contenidoQueCambia %}
+    

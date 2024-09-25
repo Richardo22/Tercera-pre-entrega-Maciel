@@ -1,11 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hamburguesa</title>
-</head>
-<body>    
-    <h1>Vista Hamburguesa</h1>
-</body>
-</html>
+{% extends 'padre.html' %}
+{% block contenidoQueCambia %}
+    <h1> El listado de hamburguesas en la carta son:</h1>
+    <ul>
+        <li>Hamburguesa Simple</li>
+        <li>Hamburguesa Completa</li>
+        <li>Chiken Burger (Pollo) SIMPLE</li>
+        
+    </ul>
+
+{% endblock contenidoQueCambia %}
+    
