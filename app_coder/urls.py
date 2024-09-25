@@ -9,5 +9,5 @@ urlpatterns = [
     path('pizza/',pizza, name='pizza'),
     path('hamburguesa/',hamburguesa, name='hamburguesa'),
     path('empanada-formulario/',empanada_formulario, name='EmpanadaFormulario'),
-
-]
+    path('hamburguesa-formulario/',hamburguesa_formulario, name='HamburguesaFormulario'),
+    ]
