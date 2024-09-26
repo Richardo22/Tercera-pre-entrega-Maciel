@@ -107,9 +107,10 @@ def busqueda_empanada(req):
 
 def buscar_empanada(req):
 
-  nombre = req.GET["nombre"]
+  nombre = req.GET.get("nombre", "")  
+  empanadas = Empanada.objects.filter(nombre__icontains=nombre)
   
-  return render(req, "resultado_busqueda.html", {"nombre": nombre})
+  return render(req, "resultado_busqueda.html", {"nombre": nombre, "empanadas": empanadas})
 
     
 
