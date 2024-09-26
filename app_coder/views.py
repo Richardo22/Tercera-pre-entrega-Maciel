@@ -22,6 +22,13 @@ def crea_producto(req, nombre, ingredientes, precio):
 def lista_hamburguesa(req):
     lista=hamburguesa.objects.all()
     return render(req, 'lista_hamburguesa.html', {'hamburguesa': lista})
+def crea_producto(req, nombre, ingredientes, precio):
+    nueva_pizza = Pizza(nombre=nombre, ingredientes=ingredientes, precio=precio)
+    nueva_pizza.save()
+    return HttpResponse(f"""
+          <p>Producto: {nueva_pizza.nombre} - {nueva_pizza.ingredientes} - {nueva_pizza.precio} creado con exito </p>
+""")
+
 def inicio(req):
     return render(req, 'inicio.html', {})
 def empanada(req):
@@ -68,6 +75,26 @@ def hamburguesa_formulario(req):
         return render(req, 'inicio.html', {})
     else:
       return render(req, 'hamburguesa_formulario.html', {})
+
+def pizza_formulario(req):
+    print ('method',req.method)
+    print('data',req.POST)
+    if req.method == 'POST':
+        nombre = req.POST.get('nombre','').strip() 
+        ingredientes = req.POST.get('ingredientes','').strip()
+        precio = req.POST.get('precio', '').strip()
+        print('Nombre recibido:', nombre)
+        try:
+          precio=float(precio)
+          if precio<0:
+              precio=0
+        except ValueError:
+            precio=0
+        nueva_pizza = Pizza(nombre=nombre, ingredientes=ingredientes, precio=precio)
+        nueva_pizza.save()
+        return render(req, 'inicio.html', {})
+    else:
+      return render(req, 'pizza_formulario.html', {})
 
     
 
