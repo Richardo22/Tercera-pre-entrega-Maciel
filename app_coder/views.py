@@ -2,7 +2,6 @@ from django.http import HttpResponse
 from django.shortcuts import render
 from .models import *
 
-
 # Create your views here.
 def crea_producto(req, nombre, ingredientes, precio):
     nuevo_producto = Empanada(nombre=nombre, ingredientes=ingredientes, precio=precio)
@@ -95,6 +94,22 @@ def pizza_formulario(req):
         return render(req, 'inicio.html', {})
     else:
       return render(req, 'pizza_formulario.html', {})
+# def busqueda_producto(req):
+    # return render(req,"busqueda_producto.html")
+# def buscar_empanadas(req):
+    # empanada=req.GET['nombre']
+    # empanadsa=Emanadas.obje
+    # return HttpResponse (f'Estoy buscando que comidas hay: {req.GET['nombre']}')
+    # 
+def busqueda_empanada(req):
+
+  return render(req, "busqueda-producto.html")
+
+def buscar_empanada(req):
+
+  nombre = req.GET["nombre"]
+  
+  return render(req, "resultado_busqueda.html", {"nombre": nombre})
 
     
 
